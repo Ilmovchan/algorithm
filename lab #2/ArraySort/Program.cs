@@ -12,16 +12,9 @@ namespace ArraySort
         {
             ArrGen generator = new ArrGen(10, -300, 300);
 
-            int[] baseArr = generator.BaseArr;
+            Console.WriteLine(generator.ToString());
 
-            foreach (int element in baseArr)
-            {
-                Console.WriteLine(element + " ");
-            }
-
-            Console.WriteLine("\n");
-
-            Console.WriteLine(Convert.ToString(generator.DefaultSortTime()));
+            Console.WriteLine(generator.SortTest());
         }
     }
 }
