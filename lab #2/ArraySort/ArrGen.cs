@@ -11,22 +11,24 @@ namespace ArraySort
         public ArrGen(int lenght, int min, int max)
         {
             random = new Random();
-            timeCounter = new Stopwatch();
 
             BaseArr = Generate(lenght, min, max);
 
         }
 
+        //Метод для виводу результату
         public override string ToString()
         {
             string result = "";
 
-            result += "Default sort time: " + DefaultSortTime() + "\n";
-            result += "Linq sort time: " + LinqSortTime() + "\n";
+            result += "Bubble sort time: " + MeasureMethodExecutionTime(BubbleSort, BaseArr) + "\n";
+            result += "Default sort time: " + MeasureMethodExecutionTime(DefaultSort, BaseArr) + "\n";
+            result += "Linq sort time: " + MeasureMethodExecutionTime(LinqSort, BaseArr) + "\n";
 
             return result;
         }
 
+        //Метод для генерування масиву з випадкових чисел у діапазоні min/max
         private int[] Generate(int length, int min, int max)
         {
             int[] generatedArr = new int[length];
@@ -39,9 +41,10 @@ namespace ArraySort
             return generatedArr;
         }
 
-        public bool SortTest()
+        //Метод для порівняння результату сортування
+        public bool SortCompare()
         {
-            int[][] arrComp = {DefaultSort(BaseArr), LinqSort(BaseArr)};
+            int[][] arrComp = { DefaultSort(BaseArr), LinqSort(BaseArr) , BubbleSort(BaseArr)};
 
             for (int i = 0; i < arrComp.Length; i++)
             {
@@ -56,6 +59,43 @@ namespace ArraySort
             return true;
         }
 
+        // Метод для заміра часу виконання сортування
+        public static TimeSpan MeasureMethodExecutionTime(MethodToMeasure method, int[] arr)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Reset();
+            stopwatch.Start();
+
+            method(arr);
+
+            stopwatch.Stop();
+            return stopwatch.Elapsed;
+        }
+
+        //"Бульбашкове" сортування
+        private int[] BubbleSort(int[] originalArr)
+        {
+            int[] bubbleSortArr = new int[originalArr.Length];
+
+            Array.Copy(originalArr, bubbleSortArr, originalArr.Length);
+
+            for (int i = 0; i < bubbleSortArr.Length - 1; i++)
+            {
+                for (int j = 0; j < bubbleSortArr.Length - 1 - i; j++)
+                {
+                    if (bubbleSortArr[j] < bubbleSortArr[j + 1])
+                    {
+                        int tmp = bubbleSortArr[j];
+                        bubbleSortArr[j] = bubbleSortArr[j + 1];
+                        bubbleSortArr[j + 1] = tmp;
+                    }
+                }
+            }
+
+            return bubbleSortArr;
+        }
+
+        //Сортування із використанням linq
         private int[] LinqSort(int[] originalArr)
         {
             int[] linqSortArr = new int[originalArr.Length];
@@ -67,19 +107,7 @@ namespace ArraySort
             return sortedNumbersDescending.ToArray();
         }
 
-        public long LinqSortTime()
-        {
-            timeCounter.Reset();
-
-            timeCounter.Start();
-
-            LinqSort(BaseArr);
-
-            timeCounter.Stop();
-
-            return timeCounter.ElapsedTicks;
-        }
-
+        //Стандартне сортування
         private int[] DefaultSort(int[] originalArr)
         {
             int[] defaultSortArr = new int[originalArr.Length];
@@ -91,22 +119,9 @@ namespace ArraySort
             return defaultSortArr;
         }
 
-        public long DefaultSortTime()
-        {
-            timeCounter.Reset();
-
-            timeCounter.Start();
-
-            DefaultSort(BaseArr);
-
-            timeCounter.Stop();
-
-            return timeCounter.ElapsedTicks;
-        }
-
 
         private Random random;
-        private Stopwatch timeCounter;
+        public delegate int[] MethodToMeasure(int[] arr);
         private int[] baseArr;
 
         public int[] BaseArr

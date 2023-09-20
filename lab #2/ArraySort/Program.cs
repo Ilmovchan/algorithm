@@ -14,7 +14,7 @@ namespace ArraySort
 
             Console.WriteLine(generator.ToString());
 
-            Console.WriteLine(generator.SortTest());
+            Console.WriteLine(generator.SortCompare());
         }
     }
 }
