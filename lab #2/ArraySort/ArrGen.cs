@@ -2,30 +2,77 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace ArraySort
 {
     public class ArrGen
     {
 
-        public ArrGen(int lenght, int min, int max)
+        public ArrGen(int length, int min, int max)
         {
             random = new Random();
 
-            BaseArr = Generate(lenght, min, max);
+            BaseArr = Generate(length, min, max);
 
         }
 
-        //Метод для виводу результату
-        public override string ToString()
+        //Метод написання повної інформації у консоль
+        public void PrintInfo()
         {
-            string result = "";
 
-            result += "Bubble sort time: " + MeasureMethodExecutionTime(BubbleSort, BaseArr) + "\n";
-            result += "Default sort time: " + MeasureMethodExecutionTime(DefaultSort, BaseArr) + "\n";
-            result += "Linq sort time: " + MeasureMethodExecutionTime(LinqSort, BaseArr) + "\n";
+            if (CompareInfo())
+            {
+                Console.WriteLine("All sorting methods work well\n");
 
-            return result;
+                Console.WriteLine(TimeInfo());
+
+                Console.WriteLine("Generated array:\n");
+
+                foreach (int element in BaseArr) Console.WriteLine(element);
+
+                Console.WriteLine("\n");
+
+                Console.WriteLine("Sorted array:\n");
+
+                foreach (int element in BubbleSort(BaseArr)) Console.WriteLine(element);
+            }
+
+            else
+            {
+                Console.WriteLine("Error in sorting methods");
+            }
+        }
+
+        //Метод для виводу результату підрахунку часу виконання різних типів сортувань
+        public string TimeInfo()
+        {
+            string timeInfo = "";
+
+            timeInfo += "Bubble sort time: " + MeasureMethodExecutionTime(BubbleSort, BaseArr) + "\n";
+            timeInfo += "Default sort time: " + MeasureMethodExecutionTime(DefaultSort, BaseArr) + "\n";
+            timeInfo += "Linq sort time: " + MeasureMethodExecutionTime(LinqSort, BaseArr) + "\n";
+            timeInfo += "Selection sort time: " + MeasureMethodExecutionTime(SelectionSort, BaseArr) + "\n";
+
+            return timeInfo;
+        }
+
+        //Метод для порівняння результату різних типів сортувань
+        public bool CompareInfo()
+        {
+            int[][] arrComp = { DefaultSort(BaseArr), LinqSort(BaseArr), BubbleSort(BaseArr), SelectionSort(BaseArr) };
+
+            for (int i = 0; i < arrComp.Length; i++)
+            {
+                for (int j = i + 1; j < arrComp.Length; j++)
+                {
+                    if (!arrComp[i].SequenceEqual(arrComp[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         //Метод для генерування масиву з випадкових чисел у діапазоні min/max
@@ -41,26 +88,8 @@ namespace ArraySort
             return generatedArr;
         }
 
-        //Метод для порівняння результату сортування
-        public bool SortCompare()
-        {
-            int[][] arrComp = { DefaultSort(BaseArr), LinqSort(BaseArr) , BubbleSort(BaseArr)};
-
-            for (int i = 0; i < arrComp.Length; i++)
-            {
-                for (int j = i + 1; j < arrComp.Length; j++)
-                {
-                    if (!arrComp[i].SequenceEqual(arrComp[j]))
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
         // Метод для заміра часу виконання сортування
-        public static TimeSpan MeasureMethodExecutionTime(MethodToMeasure method, int[] arr)
+        private TimeSpan MeasureMethodExecutionTime(MethodToMeasure method, int[] arr)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Reset();
@@ -70,6 +99,31 @@ namespace ArraySort
 
             stopwatch.Stop();
             return stopwatch.Elapsed;
+        }
+
+        //Сортування з вибором
+        private int[] SelectionSort(int[] originalArr)
+        {
+            int[] selectionSortArr = new int[originalArr.Length];
+
+            Array.Copy(originalArr, selectionSortArr, originalArr.Length);
+
+            for (int i = 0; i < originalArr.Length - 1; i++)
+            {
+                int maxIndex = i;
+                for (int j = i + 1; j < originalArr.Length; j++)
+                {
+                    if (selectionSortArr[j] > selectionSortArr[maxIndex])
+                    {
+                        maxIndex = j;
+                    }
+                }
+                int temp = selectionSortArr[i];
+                selectionSortArr[i] = selectionSortArr[maxIndex];
+                selectionSortArr[maxIndex] = temp;
+            }
+
+            return selectionSortArr;
         }
 
         //"Бульбашкове" сортування
@@ -131,4 +185,3 @@ namespace ArraySort
         }
     }
 }
-

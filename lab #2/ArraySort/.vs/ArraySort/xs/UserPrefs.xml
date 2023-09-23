@@ -1,22 +1,25 @@
 ﻿<Properties StartupConfiguration="{9D8C3680-5837-41C7-89E4-B1AD24C52253}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ArraySort PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ArrGen.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ArraySort PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TupleGen.cs">
     <Files>
-      <File FileName="Program.cs" />
-      <File FileName="ArrGen.cs" Line="94" Column="38" />
+      <File FileName="Program.cs" Line="17" Column="56" />
+      <File FileName="ArrGen.cs" Line="151" Column="31" />
+      <File FileName="TupleGen.cs" Line="17" Column="63" />
+      <File FileName="App.config" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ArraySort" expanded="True">
+          <Node name="ArraySort">
             <Node name="ArraySort" expanded="True">
-              <Node name="ArrGen.cs" selected="True" />
+              <Node name="References" expanded="True" />
+              <Node name="TupleGen.cs" selected="True" />
             </Node>
           </Node>
         </State>

@@ -46,6 +46,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ArrGen.cs" />
+    <Compile Include="TupleGen %28DONT USE!%29.cs" />
+    <Compile Include="KeyValuePairGen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
