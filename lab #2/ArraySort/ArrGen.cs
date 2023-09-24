@@ -88,7 +88,7 @@ namespace ArraySort
             return generatedArr;
         }
 
-        // Метод для заміра часу виконання сортування
+        // Метод для заміру часу виконання сортування
         private TimeSpan MeasureMethodExecutionTime(MethodToMeasure method, int[] arr)
         {
             Stopwatch stopwatch = new Stopwatch();

@@ -32,6 +32,6 @@ namespace ArraySort
 
 		private List<Tuple<int, int>> pairList = new List<Tuple<int, int>>();
 		private Random random;
-    }
+	}
 }
 
