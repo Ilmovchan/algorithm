@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{2EFDE5BB-B5E0-4031-85A0-CA13A4FB6C9E}|Default">
+  <MonoDevelop.Ide.ItemProperties.AlgorithmTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AlgorithmTest/ArraySearch.cs">
+    <Files>
+      <File FileName="AlgorithmTest/Program.cs" Line="24" Column="1" />
+      <File FileName="AlgorithmTest/ArraySearch.cs" Line="35" Column="57" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AlgorithmTest" expanded="True">
+            <Node name="AlgorithmTest" expanded="True">
+              <Node name="ArraySearch.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

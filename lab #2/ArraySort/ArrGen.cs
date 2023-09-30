@@ -92,7 +92,6 @@ namespace ArraySort
         private TimeSpan MeasureMethodExecutionTime(MethodToMeasure method, int[] arr)
         {
             Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Reset();
             stopwatch.Start();
 
             method(arr);
