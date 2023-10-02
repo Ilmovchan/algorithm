@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+
 namespace AlgorithmTest
 {
 	public class ArraySearch
@@ -8,32 +10,40 @@ namespace AlgorithmTest
             random = new Random();
 		}
 
-        public int[] RandomGenerate()
+        //Метод для виводу рез-тату
+        public void Info(int[] simpleArr, int needle)
         {
-            int[] generatedArr = new int[random.Next(50)];
+            int[] sortedArr = simpleArr.ToArray();
+            Array.Sort(sortedArr);
 
-            for (int i = 0; i < generatedArr.Length; i++)
-            {
-                generatedArr[i] = random.Next(-200, 200);
-            }
+            //Вывод заданого массива
+            Console.WriteLine("Generated array: ");
+            foreach (int element in simpleArr) Console.WriteLine(element);
+            Console.WriteLine('\n');
 
-            return generatedArr;
+
+            //Вывод результата простого поиска в 2 типах массивов
+            Console.WriteLine("SIMPLE SEARCH");
+            Console.WriteLine("Simple array:" + SimpleSearch(simpleArr, needle));
+            Console.WriteLine("Time: " + MeasureSearchExecutionTime(SimpleSearch, simpleArr, needle));
+
+            Console.WriteLine("Sorted array:" + SimpleSearch(sortedArr, needle));
+            Console.WriteLine("Time: " + MeasureSearchExecutionTime(SimpleSearch, sortedArr, needle));
+            Console.WriteLine('\n');
+
+            //Вывод результата бинарного поиска в 2 типах массивов
+            Console.WriteLine("BINARY SEARCH");
+            Console.WriteLine("Simple array:" + BinarySearch(simpleArr, needle));
+            Console.WriteLine("Time: " + MeasureSearchExecutionTime(BinarySearch, simpleArr, needle));
+
+            Console.WriteLine("Sorted array:" + BinarySearch(sortedArr, needle));
+            Console.WriteLine("Time: " + MeasureSearchExecutionTime(BinarySearch, sortedArr, needle));
         }
 
-        public int[] SimpleGenerate(int min, int max)
+        public bool SimpleSearch(int[] stack, int needle, int start = 0, int end = -1)
         {
-            int[] generatedArr = new int[max - min + 1];
+            if (end == -1) end = stack.Length - 1;
 
-            for (int i = min; i <= max; i++)
-            {
-                generatedArr[i - min] = i;
-            }
-
-            return generatedArr;
-        }
-
-        public bool SimpleSearch(int[] stack, int needle, int start, int end)
-        {
             for (int i = start; i <= end; i++)
             {
                 if (stack[i] == needle) return true;
@@ -41,8 +51,10 @@ namespace AlgorithmTest
             return false;
         }
 
-        public bool BinarySearch(int[] stack, int needle, int start, int end)
+        public bool BinarySearch(int[] stack, int needle, int start = 0, int end = -1)
         {
+            if (end == -1) end = stack.Length - 1;
+
             while (start <= end)
             {
                 int mid = (start + end) / 2;
@@ -54,6 +66,20 @@ namespace AlgorithmTest
 
             return false;
         }
+
+        // Метод для заміру часу виконання сортування
+        public long MeasureSearchExecutionTime(MethodToMeasure method, int[] stack, int needle, int start = 0, int end = -1)
+        {
+            var watch = Stopwatch.StartNew();
+
+            method(stack, needle, start, end);
+
+            watch.Stop();
+
+            return watch.ElapsedTicks;
+        }
+
+        public delegate bool MethodToMeasure(int[] stack, int needle, int start, int end);
 
         Random random;
     }

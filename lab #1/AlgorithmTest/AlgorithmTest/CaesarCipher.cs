@@ -9,8 +9,21 @@ namespace AlgorithmTest
 	public class CaesarCipher
 	{
 
-        //Закодувати шифром Цезаря
-        private string FirstEncryptionMethod(string message, int shift)
+        // Метод для виводу рез-тату
+        public void Info(string message, int shift)
+        {
+            Console.WriteLine(message + '\n');
+
+            Console.WriteLine("1st encryption method: " + MeasureExecutionTime(FirstEncryptionMethod, message, shift));
+            Console.WriteLine(FirstEncryptionMethod(message, shift) + '\n');
+
+            Console.WriteLine("2nd encryption method: " + MeasureExecutionTime(SecondEncryptionMethod, message, shift));
+            Console.WriteLine(SecondEncryptionMethod(message, shift) + '\n');
+        }
+
+
+        // 1 Метод кодування
+        public string FirstEncryptionMethod(string message, int shift)
         {
             string result = "";
 
@@ -36,8 +49,9 @@ namespace AlgorithmTest
             return result;
         }
 
-        //більш оптимізований метод завдяки Stringbuilder
-        private string SecondEncryptionMethod(string message, int shift)
+
+        // 2 Метод кодування
+        public string SecondEncryptionMethod(string message, int shift)
         {
             StringBuilder result = new StringBuilder();
 
@@ -60,26 +74,16 @@ namespace AlgorithmTest
             return result.ToString();
         }
 
-        //Метод для виводу рез-тату
-        public void ToString(string message, int shift)
-        {
-            Console.WriteLine(message);
 
-            Console.WriteLine("1st encryption method: " + MeasureEncryptionExecutionTime(FirstEncryptionMethod, message, shift));
-            Console.WriteLine(FirstEncryptionMethod(message, shift) + '\n');
 
-            Console.WriteLine("2nd encryption method: " + MeasureEncryptionExecutionTime(SecondEncryptionMethod, message, shift));
-            Console.WriteLine(SecondEncryptionMethod(message, shift) + '\n');
-        }
-
-        //Розкодувати шифр Цезаря
-        private string Decrypt(string message, int shift)
+        // Розкодувати шифр Цезаря
+        public string Decrypt(string message, int shift)
         {
             return SecondEncryptionMethod(message, -shift);
         }
 
-        // Метод для заміру часу виконання сортування
-        private TimeSpan MeasureEncryptionExecutionTime(MethodToMeasure method, string arg1, int arg2)
+        // Метод для заміру часу виконання 
+        public TimeSpan MeasureExecutionTime(MethodToMeasure method, string arg1, int arg2)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

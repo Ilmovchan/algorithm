@@ -7,23 +7,40 @@ namespace AlgorithmTest
     {
         static void Main(string[] args)
         {
-            //CaesarCipher caesarCipher = new CaesarCipher();
+            //Caesar cipher test
 
-            //string message = "hello";
-            //int shift = 5;
+            /*CaesarCipher caesarCipher = new CaesarCipher();
 
-            //caesarCipher.ToString(message, shift);
+            string message = "hello";
+            int shift = 5;
+
+            caesarCipher.Info(message, shift);*/
 
 
+            //Array search test
 
-            ArraySearch search = new ArraySearch();
+            /*ArraySearch search = new ArraySearch();
 
-            int[] arr = search.SimpleGenerate(-30, 30);
+            int[] simpleArr = search.Generate(30000, -50, 50);
+            int needle = 49;
 
-            Console.WriteLine(search.SimpleSearch(arr, 6, 2, 5));
+            search.Info(simpleArr, needle);*/
 
-            Console.WriteLine(search.BinarySearch(arr, -13, 0, 20));
+            //EratosthenesSieve sieve = new EratosthenesSieve();
+
+            //var sieveArr = Generate.KeyValuePair(-50, 30);
+
+            //var finishedSieve = sieve.FirstSieveMethod(sieveArr);
+
+            //Console.WriteLine(sieve.MeasureExecutionTime(sieve.FirstSieveMethod, sieveArr));
+
+            //foreach (var element in finishedSieve) Console.WriteLine(element);
+
+            foreach (var element in Generate.KeyValuePair(50, 100)) Console.WriteLine(element);
+
+            foreach (var element in Generate.IntArray(10, 50, 100)) Console.WriteLine(element);
+
+            foreach (var element in Generate.BoolArray(10)) Console.WriteLine(element);
         }
-
     }
 }

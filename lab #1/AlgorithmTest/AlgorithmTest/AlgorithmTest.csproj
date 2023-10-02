@@ -7,10 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="CipherAlgorithm\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CipherAlgorithm\" />
-  </ItemGroup>
 </Project>
