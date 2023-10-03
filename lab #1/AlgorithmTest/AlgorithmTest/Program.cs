@@ -7,40 +7,17 @@ namespace AlgorithmTest
     {
         static void Main(string[] args)
         {
-            //Caesar cipher test
 
-            /*CaesarCipher caesarCipher = new CaesarCipher();
+            int[] arr = Generate.IntArray(10000, 0, 100);
 
-            string message = "hello";
-            int shift = 5;
+            //int[] arr = { 5, 3, -8, 15, 3, -12, 5, 0 };
 
-            caesarCipher.Info(message, shift);*/
+            //foreach (int element in finishedArr) Console.WriteLine(element);
 
+            Console.WriteLine("Insert sort: " + ArraySort.MeasureExecutionTime(ArraySort.InsertSort, arr));
 
-            //Array search test
+            Console.WriteLine("Bubble sort: " + ArraySort.MeasureExecutionTime(ArraySort.BubbleSort, arr));
 
-            /*ArraySearch search = new ArraySearch();
-
-            int[] simpleArr = search.Generate(30000, -50, 50);
-            int needle = 49;
-
-            search.Info(simpleArr, needle);*/
-
-            //EratosthenesSieve sieve = new EratosthenesSieve();
-
-            //var sieveArr = Generate.KeyValuePair(-50, 30);
-
-            //var finishedSieve = sieve.FirstSieveMethod(sieveArr);
-
-            //Console.WriteLine(sieve.MeasureExecutionTime(sieve.FirstSieveMethod, sieveArr));
-
-            //foreach (var element in finishedSieve) Console.WriteLine(element);
-
-            foreach (var element in Generate.KeyValuePair(50, 100)) Console.WriteLine(element);
-
-            foreach (var element in Generate.IntArray(10, 50, 100)) Console.WriteLine(element);
-
-            foreach (var element in Generate.BoolArray(10)) Console.WriteLine(element);
         }
     }
 }

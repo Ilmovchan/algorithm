@@ -10,7 +10,7 @@ namespace AlgorithmTest
             random = new Random();
         }
 
-        public KeyValuePair<int, bool>[] FirstSieveMethod(KeyValuePair<int, bool>[] originalKvpArray)
+        public static KeyValuePair<int, bool>[] FirstSieveMethod(KeyValuePair<int, bool>[] originalKvpArray)
         {
             KeyValuePair<int, bool>[] resultKvpArray = originalKvpArray.ToArray();
 
@@ -28,7 +28,7 @@ namespace AlgorithmTest
         }
 
 
-        public TimeSpan MeasureExecutionTime(MethodToMeasure method, KeyValuePair<int, bool>[] originalKvpArray)
+        public static TimeSpan MeasureExecutionTime(MethodToMeasure method, KeyValuePair<int, bool>[] originalKvpArray)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

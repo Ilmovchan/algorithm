@@ -8,7 +8,7 @@ namespace AlgorithmTest
             
 		}
 
-        //Згенерувати масив пар (ключі - значення)
+        //Згенерувати масив пар (ключі int - значення bool)
         public static KeyValuePair<int, bool>[] KeyValuePair(int min = 0, int max = 100)
         {
             int length = max - min + 1;
@@ -25,7 +25,7 @@ namespace AlgorithmTest
             return keyValuePairs;
         }
 
-        //Згенерувати
+        //Згенерувати bool-масив
         public static bool[] BoolArray(int length)
         {
             bool[] boolArr = new bool[length];
@@ -38,7 +38,7 @@ namespace AlgorithmTest
             return boolArr;
         }
         
-        //Згенерувати
+        //Згенерувати масив випадкових чисел
         public static int[] IntArray(int length, int min = int.MinValue, int max = int.MaxValue)
         {
             Random random = new Random();

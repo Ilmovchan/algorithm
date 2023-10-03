@@ -40,7 +40,7 @@ namespace AlgorithmTest
             Console.WriteLine("Time: " + MeasureSearchExecutionTime(BinarySearch, sortedArr, needle));
         }
 
-        public bool SimpleSearch(int[] stack, int needle, int start = 0, int end = -1)
+        public static bool SimpleSearch(int[] stack, int needle, int start = 0, int end = -1)
         {
             if (end == -1) end = stack.Length - 1;
 
@@ -51,7 +51,7 @@ namespace AlgorithmTest
             return false;
         }
 
-        public bool BinarySearch(int[] stack, int needle, int start = 0, int end = -1)
+        public static bool BinarySearch(int[] stack, int needle, int start = 0, int end = -1)
         {
             if (end == -1) end = stack.Length - 1;
 
@@ -68,7 +68,7 @@ namespace AlgorithmTest
         }
 
         // Метод для заміру часу виконання сортування
-        public long MeasureSearchExecutionTime(MethodToMeasure method, int[] stack, int needle, int start = 0, int end = -1)
+        public static long MeasureSearchExecutionTime(MethodToMeasure method, int[] stack, int needle, int start = 0, int end = -1)
         {
             var watch = Stopwatch.StartNew();
 

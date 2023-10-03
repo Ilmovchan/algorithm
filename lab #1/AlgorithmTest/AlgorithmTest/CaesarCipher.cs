@@ -19,11 +19,14 @@ namespace AlgorithmTest
 
             Console.WriteLine("2nd encryption method: " + MeasureExecutionTime(SecondEncryptionMethod, message, shift));
             Console.WriteLine(SecondEncryptionMethod(message, shift) + '\n');
+
+            Console.WriteLine("2nd encryption method: " + MeasureExecutionTime(Decrypt, message, shift));
+            Console.WriteLine(Decrypt(message, shift) + '\n');
         }
 
 
         // 1 Метод кодування
-        public string FirstEncryptionMethod(string message, int shift)
+        public static string FirstEncryptionMethod(string message, int shift)
         {
             string result = "";
 
@@ -83,7 +86,7 @@ namespace AlgorithmTest
         }
 
         // Метод для заміру часу виконання 
-        public TimeSpan MeasureExecutionTime(MethodToMeasure method, string arg1, int arg2)
+        public long MeasureExecutionTime(MethodToMeasure method, string arg1, int arg2)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -91,7 +94,7 @@ namespace AlgorithmTest
             method(arg1, arg2);
 
             stopwatch.Stop();
-            return stopwatch.Elapsed;
+            return stopwatch.ElapsedTicks;
         }
 
         public delegate string MethodToMeasure(string arg1, int arg2);
