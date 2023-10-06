@@ -1,12 +1,8 @@
 ﻿using System;
 namespace AlgorithmTest
 {
-	public class Generate
+	public static class Generate
 	{
-		public Generate()
-		{
-            
-		}
 
         //Згенерувати масив пар (ключі int - значення bool)
         public static KeyValuePair<int, bool>[] KeyValuePair(int min = 0, int max = 100)

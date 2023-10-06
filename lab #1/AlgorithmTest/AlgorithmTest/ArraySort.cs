@@ -3,12 +3,8 @@ using System.Diagnostics;
 
 namespace AlgorithmTest
 {
-	public class ArraySort
+	public static class ArraySort
 	{
-		public ArraySort()
-		{
-
-		}
 
 		public static int[] BubbleSort(int[] originalArr)
 		{

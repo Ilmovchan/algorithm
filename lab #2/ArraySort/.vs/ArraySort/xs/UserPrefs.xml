@@ -1,29 +1,28 @@
-﻿<Properties StartupConfiguration="{9D8C3680-5837-41C7-89E4-B1AD24C52253}|Default">
+﻿<Properties StartupConfiguration="{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}|Default">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ArraySort PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Undone/KeyValuePairGen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArraySort/Program.cs">
     <Files>
-      <File FileName="ArrGen.cs" />
-      <File FileName="Program.cs" />
-      <File FileName="Undone/KeyValuePairGen.cs" Line="25" Column="1" />
+      <File FileName="ArraySort/Program.cs" Line="10" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ArraySort">
             <Node name="ArraySort">
-              <Node name="Undone" expanded="True">
-                <Node name="KeyValuePairGen.cs" selected="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="AssemblyDependencies" expanded="True" />
               </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

@@ -6,11 +6,11 @@ using static AlgorithmTest.Program;
 
 namespace AlgorithmTest
 {
-	public class CaesarCipher
+	public static class CaesarCipher
 	{
 
         // Метод для виводу рез-тату
-        public void Info(string message, int shift)
+        public static void Info(string message, int shift)
         {
             Console.WriteLine(message + '\n');
 
@@ -54,7 +54,7 @@ namespace AlgorithmTest
 
 
         // 2 Метод кодування
-        public string SecondEncryptionMethod(string message, int shift)
+        public static string SecondEncryptionMethod(string message, int shift)
         {
             StringBuilder result = new StringBuilder();
 
@@ -80,13 +80,13 @@ namespace AlgorithmTest
 
 
         // Розкодувати шифр Цезаря
-        public string Decrypt(string message, int shift)
+        public static string Decrypt(string message, int shift)
         {
             return SecondEncryptionMethod(message, -shift);
         }
 
         // Метод для заміру часу виконання 
-        public long MeasureExecutionTime(MethodToMeasure method, string arg1, int arg2)
+        public static long MeasureExecutionTime(MethodToMeasure method, string arg1, int arg2)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();

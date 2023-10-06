@@ -3,12 +3,8 @@ using System.Diagnostics;
 
 namespace AlgorithmTest
 {
-    public class EratosthenesSieve
+    public static class EratosthenesSieve
     {
-        public EratosthenesSieve()
-        {
-            random = new Random();
-        }
 
         public static KeyValuePair<int, bool>[] FirstSieveMethod(KeyValuePair<int, bool>[] originalKvpArray)
         {
@@ -41,23 +37,6 @@ namespace AlgorithmTest
 
         public delegate KeyValuePair<int, bool>[] MethodToMeasure(KeyValuePair<int, bool>[] originalKvpArray);
 
-        //public bool[] Execute(bool[] arr)
-        //{
-        //    bool[] resultArr = arr.ToArray();
-
-        //    resultArr[0] = false;
-        //    resultArr[1] = false;
-
-
-        //    for (int i = 0; i < resultArr.Length; i++)
-        //    {
-        //        if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0) resultArr[i] = false;
-        //    }
-
-        //    return resultArr;
-        //}
-
-        Random random;
     }
 }
 

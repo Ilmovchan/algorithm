@@ -3,15 +3,11 @@ using System.Diagnostics;
 
 namespace AlgorithmTest
 {
-	public class ArraySearch
+	public static class ArraySearch
 	{
-		public ArraySearch()
-		{
-            random = new Random();
-		}
 
         //Метод для виводу рез-тату
-        public void Info(int[] simpleArr, int needle)
+        public static void Info(int[] simpleArr, int needle)
         {
             int[] sortedArr = simpleArr.ToArray();
             Array.Sort(sortedArr);
@@ -80,8 +76,6 @@ namespace AlgorithmTest
         }
 
         public delegate bool MethodToMeasure(int[] stack, int needle, int start, int end);
-
-        Random random;
     }
 }
 
