@@ -1,0 +1,32 @@
+/Users/user/Documents/GitHub/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort
+/Users/user/Documents/GitHub/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.deps.json
+/Users/user/Documents/GitHub/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.runtimeconfig.json
+/Users/user/Documents/GitHub/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.dll
+/Users/user/Documents/GitHub/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.pdb
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.csproj.AssemblyReference.cache
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.AssemblyInfoInputs.cache
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.AssemblyInfo.cs
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.csproj.CoreCompileInputs.cache
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.csproj.CopyComplete
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.dll
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/refint/ArraySort.dll
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.pdb
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.genruntimeconfig.cache
+/Users/user/Documents/GitHub/ArraySort/ArraySort/obj/Debug/net7.0/ref/ArraySort.dll
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.deps.json
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.runtimeconfig.json
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.dll
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/bin/Debug/net7.0/ArraySort.pdb
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.csproj.AssemblyReference.cache
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.AssemblyInfoInputs.cache
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.AssemblyInfo.cs
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.csproj.CoreCompileInputs.cache
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.csproj.CopyComplete
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.dll
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/refint/ArraySort.dll
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.pdb
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ArraySort.genruntimeconfig.cache
+/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/Debug/net7.0/ref/ArraySort.dll
