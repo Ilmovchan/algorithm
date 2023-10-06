@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] arr = Generate.Array<int>(5);
+        int[] arr = Generate.Array<int>(10000);
 
         ArrSort.PrintInfo(arr);
     }

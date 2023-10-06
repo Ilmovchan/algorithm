@@ -45,13 +45,13 @@ namespace ArraySort
 
                 Console.WriteLine("Generated array:\n");
 
-                foreach (int element in arr) Console.WriteLine(element);
+                //foreach (int element in arr) Console.WriteLine(element);
 
-                Console.WriteLine("\n");
+                //Console.WriteLine("\n");
 
-                Console.WriteLine("Sorted array:\n");
+                //Console.WriteLine("Sorted array:\n");
 
-                foreach (int element in BubbleSort(arr)) Console.WriteLine(element);
+                //foreach (int element in BubbleSort(arr)) Console.WriteLine(element);
             }
 
             else
