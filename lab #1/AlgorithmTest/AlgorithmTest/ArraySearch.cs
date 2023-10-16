@@ -7,27 +7,29 @@ namespace AlgorithmTest
 	{
 
         //Метод для виводу рез-тату
-        public static void Info(int[] simpleArr, int needle)
+        public static void Demo(int[] simpleArr, int needle)
         {
             int[] sortedArr = simpleArr.ToArray();
             Array.Sort(sortedArr);
 
-            //Вывод заданого массива
-            Console.WriteLine("Generated array: ");
+            Console.WriteLine($"You are searching number {needle}\n");
+
+            //Вивід заданого масиву
+            Console.WriteLine("Given array:\n");
             foreach (int element in simpleArr) Console.WriteLine(element);
             Console.WriteLine('\n');
 
 
-            //Вывод результата простого поиска в 2 типах массивов
-            Console.WriteLine("SIMPLE SEARCH");
-            Console.WriteLine("Simple array:" + SimpleSearch(simpleArr, needle));
-            Console.WriteLine("Time: " + MeasureSearchExecutionTime(SimpleSearch, simpleArr, needle));
+            //Вивід результату лінійного пошуку у 2 типах масивів
+            Console.WriteLine("Linear search");
+            Console.WriteLine("Simple array:" + LinearSearch(simpleArr, needle));
+            Console.WriteLine("Time: " + MeasureSearchExecutionTime(LinearSearch, simpleArr, needle));
 
-            Console.WriteLine("Sorted array:" + SimpleSearch(sortedArr, needle));
-            Console.WriteLine("Time: " + MeasureSearchExecutionTime(SimpleSearch, sortedArr, needle));
+            Console.WriteLine("Sorted array:" + LinearSearch(sortedArr, needle));
+            Console.WriteLine("Time: " + MeasureSearchExecutionTime(LinearSearch, sortedArr, needle));
             Console.WriteLine('\n');
 
-            //Вывод результата бинарного поиска в 2 типах массивов
+            //Вивід результату бінарного пошуку у 2 типах масивів
             Console.WriteLine("BINARY SEARCH");
             Console.WriteLine("Simple array:" + BinarySearch(simpleArr, needle));
             Console.WriteLine("Time: " + MeasureSearchExecutionTime(BinarySearch, simpleArr, needle));
@@ -36,7 +38,8 @@ namespace AlgorithmTest
             Console.WriteLine("Time: " + MeasureSearchExecutionTime(BinarySearch, sortedArr, needle));
         }
 
-        public static bool SimpleSearch(int[] stack, int needle, int start = 0, int end = -1)
+        //Лінійний пошук
+        public static bool LinearSearch(int[] stack, int needle, int start = 0, int end = -1)
         {
             if (end == -1) end = stack.Length - 1;
 
@@ -47,6 +50,7 @@ namespace AlgorithmTest
             return false;
         }
 
+        //Бінарний пошук
         public static bool BinarySearch(int[] stack, int needle, int start = 0, int end = -1)
         {
             if (end == -1) end = stack.Length - 1;
@@ -63,7 +67,7 @@ namespace AlgorithmTest
             return false;
         }
 
-        // Метод для заміру часу виконання сортування
+        // Метод для заміру часу виконання методу
         public static long MeasureSearchExecutionTime(MethodToMeasure method, int[] stack, int needle, int start = 0, int end = -1)
         {
             var watch = Stopwatch.StartNew();

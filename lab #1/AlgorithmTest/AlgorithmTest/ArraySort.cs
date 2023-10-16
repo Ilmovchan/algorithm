@@ -6,6 +6,33 @@ namespace AlgorithmTest
 	public static class ArraySort
 	{
 
+        public static void Demo(int[] arr)
+        {
+            //Вывод заданого массива
+            Console.WriteLine("Original array:\n");
+            foreach (int element in arr) Console.WriteLine(element);
+            Console.WriteLine('\n');
+
+            int[] bubbleSortArr = BubbleSort(arr);
+            int[] selectionSortArr = SelectionSort(arr);
+
+            if (Compare(bubbleSortArr, selectionSortArr))
+            {
+                Console.WriteLine("Sorting methods work correctly\n");
+                Console.WriteLine("Bubble sort time: " + MeasureExecutionTime(BubbleSort, arr));
+                Console.WriteLine("Selection sort time: " + MeasureExecutionTime(SelectionSort, arr));
+                Console.WriteLine('\n');
+
+                Console.WriteLine("Sorted array:\n");
+                foreach (int element in bubbleSortArr) Console.WriteLine(element);
+                Console.WriteLine('\n');
+            }
+            else
+            {
+                Console.WriteLine("Sorting methods work incorrectly");
+            }
+        }
+
 		public static int[] BubbleSort(int[] originalArr)
 		{
             int[] arr = originalArr.ToArray();
@@ -29,7 +56,7 @@ namespace AlgorithmTest
 			return arr;
 		}
 
-		public static int[] InsertSort(int[] originalArr)
+		public static int[] SelectionSort(int[] originalArr)
 		{
             int[] arr = originalArr.ToArray();
 
@@ -51,6 +78,23 @@ namespace AlgorithmTest
             }
 
             return arr;
+        }
+
+        public static bool Compare(int[] arr1, int[] arr2)
+        {
+            int[][] arrComp = {arr1, arr2};
+
+            for (int i = 0; i < arrComp.Length; i++)
+            {
+                for (int j = i + 1; j < arrComp.Length; j++)
+                {
+                    if (!arrComp[i].SequenceEqual(arrComp[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public static long MeasureExecutionTime(SortingMethod method, int[] arr)

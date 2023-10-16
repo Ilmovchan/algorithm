@@ -1,8 +1,6 @@
-﻿
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Text;
-using static AlgorithmTest.Program;
 
 namespace AlgorithmTest
 {

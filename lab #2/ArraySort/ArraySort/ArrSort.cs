@@ -9,6 +9,75 @@ namespace ArraySort
 {
 	public static class ArrSort
 	{
+
+        private static int FindPivot(int[] arr, int minIndex, int maxIndex)
+        {   
+            int pivot = minIndex -1;
+
+            for (int i = minIndex; i < maxIndex; i++)
+            {
+                if (arr[i] < arr[maxIndex])
+                {
+                    pivot++;
+                    Swap(ref arr[pivot], ref arr[i]);
+                }
+            }
+
+            pivot++;
+            Swap(ref arr[pivot], ref arr[maxIndex]);
+            return pivot;
+        }
+
+        public static int[] QuickSort(int[] arr, int minIndex = 0, int maxIndex = -1)
+        {
+            if (maxIndex == -1) maxIndex = arr.Length - 1;
+
+            if (minIndex >= maxIndex)
+            {
+                return arr;
+            }
+
+            var pivotIndex = FindPivot(arr, minIndex, maxIndex);
+            QuickSort(arr, minIndex, pivotIndex - 1);
+            QuickSort(arr, pivotIndex + 1, maxIndex);
+
+            return arr;
+        }
+
+        //Сортування з вибором
+        public static int[] SelectionSort(int[] originalArr, int minIndex = 0, int maxIndex = -1)
+        {
+            int[] arr = originalArr.ToArray();
+            if (maxIndex == -1) maxIndex = arr.Length;
+
+            for (int j = minIndex; j < maxIndex; j++)
+            {
+                int minValue = j;
+
+                for (int i = j; i < maxIndex; i++)
+                {
+                    if (arr[minValue] < arr[i])
+                    {
+                        minValue = i;
+                    }
+                }
+
+                Swap(ref arr[j], ref arr[minValue]);
+            }
+
+            return arr;
+        }
+
+        //Swap
+        private static void Swap(ref int a, ref int b)
+        {
+            int tmp = a;
+            a = b;
+            b = tmp;
+        }
+
+        //------------------------------------------------------------------------------------------------------
+
         public static void PrintSortedArrs(int[] arr)
         {
             int[] bubbleSort = ArrSort.BubbleSort(arr);
@@ -33,45 +102,45 @@ namespace ArraySort
             Console.WriteLine("\n");
         }
 
-        //Метод написання повної інформації у консоль
-        public static void PrintInfo(int[] arr)
-        {
+        ////Метод написання повної інформації у консоль
+        //public static void PrintInfo(int[] arr)
+        //{
 
-            if (CompareInfo(arr))
-            {
-                Console.WriteLine("All sorting methods work well\n");
+        //    if (CompareInfo(arr))
+        //    {
+        //        Console.WriteLine("All sorting methods work well\n");
 
-                Console.WriteLine(TimeInfo(arr));
+        //        Console.WriteLine(TimeInfo(arr));
 
-                Console.WriteLine("Generated array:\n");
+        //        Console.WriteLine("Generated array:\n");
 
-                //foreach (int element in arr) Console.WriteLine(element);
+        //        //foreach (int element in arr) Console.WriteLine(element);
 
-                //Console.WriteLine("\n");
+        //        //Console.WriteLine("\n");
 
-                //Console.WriteLine("Sorted array:\n");
+        //        //Console.WriteLine("Sorted array:\n");
 
-                //foreach (int element in BubbleSort(arr)) Console.WriteLine(element);
-            }
+        //        //foreach (int element in BubbleSort(arr)) Console.WriteLine(element);
+        //    }
 
-            else
-            {
-                Console.WriteLine("Error in sorting methods");
-            }
-        }
+        //    else
+        //    {
+        //        Console.WriteLine("Error in sorting methods");
+        //    }
+        //}
 
-        //Метод для виводу результату підрахунку часу виконання різних типів сортувань
-        public static string TimeInfo(int[] arr)
-        {
-            string timeInfo = "";
+        ////Метод для виводу результату підрахунку часу виконання різних типів сортувань
+        //public static string TimeInfo(int[] arr)
+        //{
+        //    string timeInfo = "";
 
-            timeInfo += "Bubble sort time: " + MeasureExecutionTime(BubbleSort, arr) + "\n";
-            timeInfo += "Default sort time: " + MeasureExecutionTime(DefaultSort, arr) + "\n";
-            timeInfo += "Linq sort time: " + MeasureExecutionTime(LinqSort, arr) + "\n";
-            timeInfo += "Selection sort time: " + MeasureExecutionTime(SelectionSort, arr) + "\n";
+        //    timeInfo += "Bubble sort time: " + MeasureExecutionTime(BubbleSort, arr) + "\n";
+        //    timeInfo += "Default sort time: " + MeasureExecutionTime(DefaultSort, arr) + "\n";
+        //    timeInfo += "Linq sort time: " + MeasureExecutionTime(LinqSort, arr) + "\n";
+        //    //timeInfo += "Selection sort time: " + MeasureExecutionTime(SelectionSort, arr) + "\n";
 
-            return timeInfo;
-        }
+        //    return timeInfo;
+        //}
 
         //Метод для порівняння результату різних типів сортувань
         public static bool CompareInfo(int[] arr)
@@ -116,30 +185,6 @@ namespace ArraySort
             return arr;
         }
 
-        //Сортування з вибором
-        public static int[] SelectionSort(int[] originalArr)
-        {
-            int[] arr = originalArr.ToArray();
-
-            for (int j = 0; j < arr.Length; j++)
-            {
-                int minIndex = j;
-
-                for (int i = j; i < arr.Length; i++)
-                {
-                    if (arr[minIndex] < arr[i])
-                    {
-                        minIndex = i;
-                    }
-                }
-
-                int tmp = arr[j];
-                arr[j] = arr[minIndex];
-                arr[minIndex] = tmp;
-            }
-
-            return arr;
-        }
 
         //Сортування із використанням linq
         public static int[] LinqSort(int[] originalArr)
@@ -165,17 +210,18 @@ namespace ArraySort
             return defaultSortArr;
         }
 
-        public static long MeasureExecutionTime(SortingMethod method, int[] arr)
+        public static TimeSpan MeasureExecutionTime(SortingMethod method, int[] arr)
         {
             var watch = Stopwatch.StartNew();
 
             method(arr);
 
             watch.Stop();
-            return watch.ElapsedTicks;
+
+            return watch.Elapsed;
         }
 
-        public delegate int[] SortingMethod(int[] arr);
+        public delegate int[] SortingMethod(int[] arr, int minIndex = 0, int maxIndex = -2);
     }
 }
         

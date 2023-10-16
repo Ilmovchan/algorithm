@@ -8,15 +8,11 @@ namespace AlgorithmTest
         static void Main(string[] args)
         {
 
-            int[] arr = Generate.IntArray(10000, 0, 100);
+            int[] arr = Generate.IntArray(20, -100, 100);
 
-            //int[] arr = { 5, 3, -8, 15, 3, -12, 5, 0 };
+            //ArraySort.Demo(arr);
 
-            //foreach (int element in finishedArr) Console.WriteLine(element);
-
-            Console.WriteLine("Insert sort: " + ArraySort.MeasureExecutionTime(ArraySort.InsertSort, arr));
-
-            Console.WriteLine("Bubble sort: " + ArraySort.MeasureExecutionTime(ArraySort.BubbleSort, arr));
+            ArraySearch.Demo(arr, arr[15]);
 
         }
     }
