@@ -15,12 +15,14 @@ namespace AlgorithmTest
 
             int[] bubbleSortArr = BubbleSort(arr);
             int[] selectionSortArr = SelectionSort(arr);
+            int[] insertionSortArr = InsertionSort(arr);
 
-            if (Compare(bubbleSortArr, selectionSortArr))
+            if (Compare(bubbleSortArr, selectionSortArr, insertionSortArr))
             {
                 Console.WriteLine("Sorting methods work correctly\n");
                 Console.WriteLine("Bubble sort time: " + MeasureExecutionTime(BubbleSort, arr));
                 Console.WriteLine("Selection sort time: " + MeasureExecutionTime(SelectionSort, arr));
+                Console.WriteLine("Insertion sort time: " + MeasureExecutionTime(InsertionSort, arr));
                 Console.WriteLine('\n');
 
                 Console.WriteLine("Sorted array:\n");
@@ -30,6 +32,16 @@ namespace AlgorithmTest
             else
             {
                 Console.WriteLine("Sorting methods work incorrectly");
+
+                
+                foreach (int element in insertionSortArr) Console.WriteLine(element);
+                Console.WriteLine('\n');
+
+                foreach (int element in bubbleSortArr) Console.WriteLine(element);
+                Console.WriteLine('\n');
+
+                foreach (int element in selectionSortArr) Console.WriteLine(element);
+                Console.WriteLine('\n');
             }
         }
 
@@ -80,9 +92,33 @@ namespace AlgorithmTest
             return arr;
         }
 
-        public static bool Compare(int[] arr1, int[] arr2)
+        public static int[] InsertionSort(int[] originalArr)
         {
-            int[][] arrComp = {arr1, arr2};
+            int[] arr = originalArr.ToArray();
+
+            int index;
+            int currentNumber;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                index = i;
+                currentNumber = arr[i];
+
+                while(index > 0 && currentNumber < arr[index - 1])
+                {
+                    arr[index] = arr[index - 1];
+                    index--;
+                }
+
+                arr[index] = currentNumber;
+            }
+
+            return arr;
+        }
+
+        public static bool Compare(int[] arr1, int[] arr2, int[] arr3)
+        {
+            int[][] arrComp = {arr1, arr2, arr3};
 
             for (int i = 0; i < arrComp.Length; i++)
             {
@@ -97,14 +133,24 @@ namespace AlgorithmTest
             return true;
         }
 
-        public static long MeasureExecutionTime(SortingMethod method, int[] arr)
+
+        //Swap
+        private static void Swap(ref int a, ref int b)
+        {
+            int tmp = a;
+            a = b;
+            b = tmp;
+        }
+
+
+        public static TimeSpan MeasureExecutionTime(SortingMethod method, int[] arr)
         {
             var watch = Stopwatch.StartNew();
 
             method(arr);
 
             watch.Stop();
-            return watch.ElapsedTicks;
+            return watch.Elapsed;
         }
 
         public delegate int[] SortingMethod(int[] arr);

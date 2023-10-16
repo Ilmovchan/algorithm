@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ArraySort/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ArraySort/ArrSort.cs">
     <Files>
-      <File FileName="ArraySort/Program.cs" Line="1" Column="1" />
-      <File FileName="ArraySort/ArrSort.cs" Line="146" Column="1" />
+      <File FileName="ArraySort/Program.cs" />
+      <File FileName="ArraySort/ArrSort.cs" Line="71" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ArraySort" expanded="True">
+          <Node name="ArraySort">
             <Node name="ArraySort" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="ArrSort.cs" selected="True" />
             </Node>
           </Node>
         </State>

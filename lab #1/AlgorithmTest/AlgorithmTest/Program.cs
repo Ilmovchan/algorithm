@@ -10,9 +10,9 @@ namespace AlgorithmTest
 
             int[] arr = Generate.IntArray(20, -100, 100);
 
-            //ArraySort.Demo(arr);
+            ArraySort.Demo(arr);
 
-            ArraySearch.Demo(arr, arr[15]);
+            //ArraySearch.Demo(arr, arr[15]);
 
         }
     }

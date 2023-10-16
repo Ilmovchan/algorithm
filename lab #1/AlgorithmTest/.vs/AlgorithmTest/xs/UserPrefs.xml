@@ -2,18 +2,21 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.AlgorithmTest PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="AlgorithmTest/ArraySearch.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AlgorithmTest/ArraySort.cs">
     <Files>
-      <File FileName="AlgorithmTest/Program.cs" Line="11" Column="44" />
-      <File FileName="AlgorithmTest/ArraySort.cs" Line="98" Column="18" />
-      <File FileName="AlgorithmTest/ArraySearch.cs" Line="1" Column="1" />
+      <File FileName="AlgorithmTest/Program.cs" />
+      <File FileName="AlgorithmTest/ArraySort.cs" Line="86" Column="1" />
+      <File FileName="AlgorithmTest/ArraySearch.cs" />
+      <File FileName="AlgorithmTest/EratosthenesSieve.cs" />
+      <File FileName="AlgorithmTest/Generate.cs" />
+      <File FileName="AlgorithmTest/CaesarCipher.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="AlgorithmTest">
+          <Node name="AlgorithmTest" expanded="True">
             <Node name="AlgorithmTest">
-              <Node name="ArraySearch.cs" selected="True" />
+              <Node name="ArraySort.cs" selected="True" />
             </Node>
           </Node>
         </State>
