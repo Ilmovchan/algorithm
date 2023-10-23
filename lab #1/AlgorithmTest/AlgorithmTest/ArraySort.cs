@@ -56,10 +56,8 @@ namespace AlgorithmTest
 				{
 					if (arr[i] > arr[i + 1])
 					{
-						int tmp = arr[i];
-						arr[i] = arr[i + 1];
-						arr[i + 1] = tmp;
-						swapped = true;
+                        Swap(ref arr[i], ref arr[i+1]);
+                        swapped = true;
 					}
 				}
                 if (!swapped) return arr;
@@ -83,10 +81,7 @@ namespace AlgorithmTest
                         minIndex = i;
                     }
                 }
-
-                int tmp = arr[j];
-                arr[j] = arr[minIndex];
-                arr[minIndex] = tmp;
+                Swap(ref arr[j], ref arr[minIndex]);
             }
 
             return arr;
@@ -134,7 +129,6 @@ namespace AlgorithmTest
         }
 
 
-        //Swap
         private static void Swap(ref int a, ref int b)
         {
             int tmp = a;

@@ -13,3 +13,17 @@
 /Users/user/Documents/GitHub/algorithm/lab #1/AlgorithmTest/AlgorithmTest/obj/Debug/net7.0/AlgorithmTest.pdb
 /Users/user/Documents/GitHub/algorithm/lab #1/AlgorithmTest/AlgorithmTest/obj/Debug/net7.0/AlgorithmTest.genruntimeconfig.cache
 /Users/user/Documents/GitHub/algorithm/lab #1/AlgorithmTest/AlgorithmTest/obj/Debug/net7.0/ref/AlgorithmTest.dll
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\bin\Debug\net7.0\AlgorithmTest.exe
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\bin\Debug\net7.0\AlgorithmTest.deps.json
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\bin\Debug\net7.0\AlgorithmTest.runtimeconfig.json
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\bin\Debug\net7.0\AlgorithmTest.dll
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\bin\Debug\net7.0\AlgorithmTest.pdb
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.AssemblyInfoInputs.cache
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.AssemblyInfo.cs
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.csproj.CoreCompileInputs.cache
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.dll
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\refint\AlgorithmTest.dll
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.pdb
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\AlgorithmTest.genruntimeconfig.cache
+C:\Users\One\Documents\GitHub\algorithm\lab #1\AlgorithmTest\AlgorithmTest\obj\Debug\net7.0\ref\AlgorithmTest.dll
