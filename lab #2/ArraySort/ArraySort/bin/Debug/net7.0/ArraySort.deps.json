@@ -8,18 +8,15 @@
     ".NETCoreApp,Version=v7.0": {
       "ArraySort/1.0.0": {
         "dependencies": {
-          "Numbers": "1.0.0.0"
+          "Numbers": "1.0.0"
         },
         "runtime": {
           "ArraySort.dll": {}
         }
       },
-      "Numbers/1.0.0.0": {
+      "Numbers/1.0.0": {
         "runtime": {
-          "Numbers.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Numbers.dll": {}
         }
       }
     }
@@ -30,8 +27,8 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Numbers/1.0.0.0": {
-      "type": "reference",
+    "Numbers/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.4
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySort", "ArraySort\ArraySort.csproj", "{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArraySort", "ArraySort\ArraySort.csproj", "{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numbers", "..\..\..\numbers\Numbers\Numbers.csproj", "{D21715CE-D3C2-4F0B-8B92-CFF0F8D95F60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C0484BE-EE16-4D04-9A03-037AF5C62DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D21715CE-D3C2-4F0B-8B92-CFF0F8D95F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D21715CE-D3C2-4F0B-8B92-CFF0F8D95F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D21715CE-D3C2-4F0B-8B92-CFF0F8D95F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D21715CE-D3C2-4F0B-8B92-CFF0F8D95F60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

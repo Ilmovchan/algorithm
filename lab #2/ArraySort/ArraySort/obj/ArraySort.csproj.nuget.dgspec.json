@@ -1,27 +1,97 @@
 {
   "format": 1,
   "restore": {
-    "/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/ArraySort.csproj": {}
+    "C:\\Users\\One\\Documents\\GitHub\\algorithm\\lab #2\\ArraySort\\ArraySort\\ArraySort.csproj": {}
   },
   "projects": {
-    "/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/ArraySort.csproj": {
+    "C:\\Users\\One\\Documents\\GitHub\\algorithm\\lab #2\\ArraySort\\ArraySort\\ArraySort.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/ArraySort.csproj",
+        "projectUniqueName": "C:\\Users\\One\\Documents\\GitHub\\algorithm\\lab #2\\ArraySort\\ArraySort\\ArraySort.csproj",
         "projectName": "ArraySort",
-        "projectPath": "/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/ArraySort.csproj",
-        "packagesPath": "/Users/user/.nuget/packages/",
-        "outputPath": "/Users/user/Documents/GitHub/algorithm/lab #2/ArraySort/ArraySort/obj/",
+        "projectPath": "C:\\Users\\One\\Documents\\GitHub\\algorithm\\lab #2\\ArraySort\\ArraySort\\ArraySort.csproj",
+        "packagesPath": "C:\\Users\\One\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\One\\Documents\\GitHub\\algorithm\\lab #2\\ArraySort\\ArraySort\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\One\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\bin\\Debug": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\Numbers.csproj": {
+                "projectPath": "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\Numbers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\Numbers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\Numbers.csproj",
+        "projectName": "Numbers",
+        "projectPath": "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\Numbers.csproj",
+        "packagesPath": "C:\\Users\\One\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\One\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\One\\Documents\\GitHub\\numbers\\Numbers\\bin\\Debug": {}
         },
         "frameworks": {
           "net7.0": {
@@ -54,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
