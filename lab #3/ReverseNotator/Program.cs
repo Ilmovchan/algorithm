@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ReverseNotator
 {
@@ -6,11 +7,9 @@ namespace ReverseNotator
     {
         static void Main(string[] args)
         {
-            string exp = "2 + 2 - 3 * (15 + 2)";
-            var mc = ReverseNotator.Convert(exp);
-            string result = "";
-            foreach (var m in mc) { result += m + " "; }
-            Console.WriteLine(result);
+            ReverseNotator result = new ReverseNotator();
+            string str = "abs ( sqrt ( 2 ) - 10 ) + 11 % 2";
+            result.Demo(str);
         }
     }
 }

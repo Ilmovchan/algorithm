@@ -77,6 +77,7 @@ namespace ArraySort
             return pivot;
         }
 
+
         //Швидке сортування
         public static int[] QuickSort(int[] arr, int minIndex = 0, int maxIndex = -1)
         {

@@ -1,98 +1,164 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace ReverseNotator
+﻿namespace ReverseNotator
 {
-    public static class ReverseNotator
+    public class ReverseNotator
     {
-        public static List<string> Convert(string tokens)
+        public void Demo(string infixExpression)
         {
-            Stack<string> operatorStack = new Stack<string>();
-            List<string> outputQueue = new List<string>();
-            
-            List<string> tokenizedList = Tokenize(tokens);
+            string postfixExpression = ConvertToRPN(infixExpression);
+            Console.WriteLine($"RPN: {postfixExpression}");
 
-            foreach (string token in tokenizedList)
+            double result = Calculate(postfixExpression);
+            Console.WriteLine($"Result: {result}");
+        }
+
+        public ReverseNotator()
+        {
+            symbols = new Dictionary<string, Func<double, double, double>>
             {
-                if (char.IsDigit(token[0]) || char.IsLetter(token[0]))
+                { "+", (double i, double j) => i + j },
+                { "-", (double i, double j) => i - j },
+                { "%", (double i, double j) => i % j },
+                { "/", (double i, double j) => i / j },
+                { "*", (double i, double j) => i * j },
+            };
+
+            functions = new Dictionary<string, Func<double, double>>
+            {
+                { "sqrt", (double i) => i * i },
+                { "abs", (double i) => Math.Abs(i) },
+            };
+
+            numbers = new Dictionary<string, double>();
+        }
+
+        private bool IsOperator(string elem)
+        {
+            return symbols.ContainsKey(elem);
+        }
+
+        private bool IsFunc(string elem)
+        {
+            return functions.ContainsKey(elem);
+        }
+
+        private double OperatorCalc(string sym, double i, double j)
+        {
+            return symbols[sym](i, j);
+        }
+
+        private double FuncCalc(string sym, double i)
+        {
+            return functions[sym](i);
+        }
+
+        public double Calculate(string str)
+        {
+            List<double> numbers = new List<double>();
+            string[] elements = str.Split();
+
+            foreach (string element in elements)
+            {
+                if (double.TryParse(element, out double number))
                 {
-                    outputQueue.Add(token);
+                    numbers.Add(number);
                 }
-                else if (IsOperator(token[0]))
+                else if (IsOperator(element))
                 {
-                    while (operatorStack.Count > 0 && GetOperatorPriority(operatorStack.Peek()[0]) >= GetOperatorPriority(token[0]))
-                    {
-                        outputQueue.Add(operatorStack.Pop());
-                    }
-                    operatorStack.Push(token);
+                    if (numbers.Count < 2)
+                        throw new InvalidOperationException($"ERROR! (Not enough syms) {element}");
+
+                    double b = numbers[numbers.Count - 1];
+                    double a = numbers[numbers.Count - 2];
+                    numbers.RemoveAt(numbers.Count - 1);
+                    numbers.RemoveAt(numbers.Count - 1);
+                    double result = OperatorCalc(element, a, b);
+                    numbers.Add(result);
                 }
-                else if (token[0] == '(')
+                else if (IsFunc(element))
                 {
-                    operatorStack.Push(token);
+                    if (numbers.Count < 1)
+                        throw new InvalidOperationException($"ERROR! (Not enough syms) {element}");
+
+                    double a = numbers[numbers.Count - 1];
+                    numbers.RemoveAt(numbers.Count - 1);
+                    double result = FuncCalc(element, a);
+                    numbers.Add(result);
                 }
-                else if (token[0] == ')')
+                else if (this.numbers.ContainsKey(element))
                 {
-                    while (operatorStack.Count > 0 && operatorStack.Peek()[0] != '(')
-                    {
-                        outputQueue.Add(operatorStack.Pop());
-                    }
-                    if (operatorStack.Count > 0 && operatorStack.Peek()[0] == '(')
-                    {
-                        operatorStack.Pop();
-                    }
+                    numbers.Add(this.numbers[element]);
+                }
+                else
+                {
+                    throw new InvalidOperationException($"ERROR! (Incorrect element) {element}");
                 }
             }
 
-            while (operatorStack.Count > 0)
-            {
-                outputQueue.Add(operatorStack.Pop());
-            }
+            if (numbers.Count != 1) throw new InvalidOperationException("ERROR! (Incorrect expression)");
 
-            return outputQueue;
+            return numbers[0];
         }
 
-
-        private static bool IsOperator(char c)
+        public string ConvertToRPN(string str)
         {
-            return c == '+' || c == '-' || c == '*' || c == '/';
-        }
-
-        private static int GetOperatorPriority(char op)
-        {
-            switch (op)
-            {
-                case '+':
-                case '-':
-                    return 1;
-                case '*':
-                case '/':
-                    return 2;
-                default:
-                    return 0; // Не оператор
-            }
-        }
-        private static List<string> Tokenize(string str)
-        {
-            str = str.Replace(" ", "");  // Убираем пробелы
-            string pattern = @"([+\-*/()])|(\d+(\.\d+)?)"; // Регулярное выражение
-
-            Regex regex = new Regex(pattern);
-            MatchCollection matchCollection = regex.Matches(str);
             List<string> result = new List<string>();
+            Stack<string> stack = new Stack<string>();
 
-            foreach (Match match in matchCollection)
+            Dictionary<string, int> priority = new Dictionary<string, int>
             {
-                result.Add(match.Value);
+                { "+", 1 }, { "-", 1 },
+                { "*", 2 }, { "/", 2 }, { "%", 2 },
+                { "abs", 3 }, { "sqrt", 3 },
+                { "(", 0 }
+            };
+
+            string[] elements = str.Split();
+            foreach (string element in elements)
+            {
+                if (double.TryParse(element, out double _))
+                {
+                    result.Add(element);
+                }
+                else if (IsOperator(element) || IsFunc(element))
+                {
+                    while (stack.Count > 0 && priority[stack.Peek()] >= priority[element])
+                    {
+                        result.Add(stack.Pop());
+                    }
+                    stack.Push(element);
+                }
+                else if (element == "(")
+                {
+                    stack.Push(element);
+                }
+                else if (element == ")")
+                {
+                    while (stack.Count > 0 && stack.Peek() != "(")
+                    {
+                        result.Add(stack.Pop());
+                    }
+                    stack.Pop();
+                }
+                else if (numbers.ContainsKey(element))
+                {
+                    result.Add(numbers[element].ToString());
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Invalid token: {element}");
+                }
             }
 
-            return result;
+            while (stack.Count > 0)
+            {
+                result.Add(stack.Pop());
+            }
+
+            return string.Join(" ", result);
         }
 
+        private Dictionary<string, Func<double, double, double>> symbols;
+        private Dictionary<string, Func<double, double>> functions;
+        private Dictionary<string, double> numbers;
     }
 }

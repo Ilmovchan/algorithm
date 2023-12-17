@@ -8,10 +8,10 @@ namespace ArraySort
     {
         static void Main(string[] args)
         {
-            int[] arr = Generate.Array<int>(1000, 0 , 500); // Увеличьте размер массива
+            int[] arr = Generate.Array<int>(100, 0 , 1000); // Увеличьте размер массива
 
             var watch = Stopwatch.StartNew();
-            ArrSort.SelectionSort(arr);
+            ArrSort.CountingSort(arr);
             watch.Stop();
 
             Console.WriteLine(watch.ElapsedTicks);
