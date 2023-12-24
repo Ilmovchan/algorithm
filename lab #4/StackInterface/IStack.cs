@@ -14,20 +14,17 @@ namespace StackInterface
 
         public List<T> elements;
         public int Count { get; private set; }
-        public T Top { get; private set; }
 
         public MyStack()
         {
             elements = new List<T>();
             Count = 0;
-            Top = default(T);
         }
 
         public void Push(T val)
         {
             elements.Add(val);
             Count++;
-            Top = elements[elements.Count - 1];
         }
 
         public T Pop()
@@ -37,7 +34,6 @@ namespace StackInterface
             T lastElement = elements[elements.Count - 1];
             elements.RemoveAt(elements.Count - 1);
             Count--;
-            Top = elements[elements.Count - 1];
             return lastElement;
         }
 
@@ -52,7 +48,6 @@ namespace StackInterface
         public void Clear()
         {
             elements.Clear();
-            Top = default(T);
             Count = 0;
         }
 
