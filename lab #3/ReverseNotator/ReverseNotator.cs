@@ -53,40 +53,37 @@
 
         public double Calculate(string str)
         {
-            List<double> numbers = new List<double>();
+            Stack<double> numbers = new Stack<double>();
             string[] elements = str.Split();
 
             foreach (string element in elements)
             {
                 if (double.TryParse(element, out double number))
                 {
-                    numbers.Add(number);
+                    numbers.Push(number);
                 }
                 else if (IsOperator(element))
                 {
                     if (numbers.Count < 2)
-                        throw new InvalidOperationException($"ERROR! (Not enough syms) {element}");
+                        throw new InvalidOperationException($"ERROR! (Not enough symbols) {element}");
 
-                    double b = numbers[numbers.Count - 1];
-                    double a = numbers[numbers.Count - 2];
-                    numbers.RemoveAt(numbers.Count - 1);
-                    numbers.RemoveAt(numbers.Count - 1);
+                    double b = numbers.Pop();
+                    double a = numbers.Pop();
                     double result = OperatorCalc(element, a, b);
-                    numbers.Add(result);
+                    numbers.Push(result);
                 }
                 else if (IsFunc(element))
                 {
                     if (numbers.Count < 1)
-                        throw new InvalidOperationException($"ERROR! (Not enough syms) {element}");
+                        throw new InvalidOperationException($"ERROR! (Not enough symbols) {element}");
 
-                    double a = numbers[numbers.Count - 1];
-                    numbers.RemoveAt(numbers.Count - 1);
+                    double a = numbers.Pop();
                     double result = FuncCalc(element, a);
-                    numbers.Add(result);
+                    numbers.Push(result);
                 }
                 else if (this.numbers.ContainsKey(element))
                 {
-                    numbers.Add(this.numbers[element]);
+                    numbers.Push(this.numbers[element]);
                 }
                 else
                 {
@@ -94,10 +91,12 @@
                 }
             }
 
-            if (numbers.Count != 1) throw new InvalidOperationException("ERROR! (Incorrect expression)");
+            if (numbers.Count != 1)
+                throw new InvalidOperationException("ERROR! (Incorrect expression)");
 
-            return numbers[0];
+            return numbers.Pop();
         }
+
 
         public string ConvertToRPN(string str)
         {
